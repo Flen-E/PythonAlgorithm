@@ -5,9 +5,7 @@ maze = []
 for _ in range(N) :
     maze.append(list(map(int,input())))
 
-
-
-def bfs(n, m,maze):
+def bfs(n, m):
     #queue를 사용
     queue = deque()
     queue.append((0,0)) # 시작 위치
@@ -15,6 +13,7 @@ def bfs(n, m,maze):
     visited[0][0] = True  # 시작 위치 방문 처리
 
     # 상하좌우 이동
+
     dx = [0, 0, -1, 1]
     dy = [-1, 1, 0, 0]
 
@@ -34,4 +33,4 @@ def bfs(n, m,maze):
                 queue.append((ny, nx))
     return -1  # 탈출 실패
 
-print(bfs(N,M,maze))
+print(bfs(N,M))
