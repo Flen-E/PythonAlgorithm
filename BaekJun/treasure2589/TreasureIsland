@@ -39,6 +39,10 @@ maxCnt = 0
 for i in range(n):
     for j in range(m):
         if maze[i][j] == 'L':
+            if(i-1 > 0 and maze[i-1][j] == 'L' and i+1 <n and  maze[i+1][j] == 'L'):
+                continue
+            if (j-1 > 0 and maze[i][j-1] == 'L' and j+1 <m and maze[i][j + 1] == 'L'):
+                continue
             maxCnt = max(maxCnt, bfs(i, j))
 
 print(maxCnt)
